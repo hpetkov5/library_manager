@@ -42,7 +42,7 @@ class Book:
 
         self._is_available = False
 
-    def retunn_book(self) -> None:
+    def return_book(self) -> None:
         """Changes _is_available attribute to True"""
         self._is_available = True
 
