@@ -84,5 +84,5 @@ class User:
         Function removes book from borrow list and changes availability state.
         :param book: Book to be removed from borrow list.
         """
-        book.remove_book()
+        book.return_book()
         self._borrowed_books.remove(book)
