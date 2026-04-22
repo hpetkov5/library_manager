@@ -1,11 +1,11 @@
 """
-This module contains the all Library Manager functionalities.
+This module contains simple OO system for managing books, users, and book loans in a library
 """
 
 
 class Book:
     """
-    Class Book
+    Module defining atributes and behaviour of Book objects.
     """
 
     def __init__(self, title: str, author: str, category: str):
@@ -15,17 +15,21 @@ class Book:
         self._is_available = True
 
     @property
-    def set_title(self) -> str:
+    def title(self) -> str:
+        """Title of the book."""
         return self._title
 
     @property
-    def set_author(self) -> str:
+    def author(self) -> str:
+        """Author of the book."""
         return self._author
 
     @property
-    def set_category(self) -> str:
+    def category(self) -> str:
+        """Category of the book."""
         return self._category
 
     @property
-    def set_is_avalable(self) -> bool:
+    def is_avalable(self) -> bool:
+        """Availability of the book."""
         return self._is_available
