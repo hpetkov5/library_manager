@@ -33,3 +33,17 @@ class Book:
     def is_avalable(self) -> bool:
         """Availability of the book."""
         return self._is_available
+
+    def borrow_book(self) -> None:
+        """
+        Changes _is_available attribute to False, if book is available.
+        Otherwise, raises a RuntimeError.
+        """
+        if not self._is_available:
+            raise RuntimeError(f"{self._title} is not available.")
+
+        self._is_available = False
+
+    def retunn_book(self) -> None:
+        """Changes _is_available attribute to True"""
+        self._is_available = True
