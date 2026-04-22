@@ -4,9 +4,7 @@ This module contains simple OO system for managing books, users, and book loans 
 
 
 class Book:
-    """
-    Module defining atributes and behaviour of Book objects.
-    """
+    """Module defining atributes and behaviour of Book objects."""
 
     def __init__(self, title: str, author: str, category: str):
         self._title = title
@@ -47,3 +45,16 @@ class Book:
     def retunn_book(self) -> None:
         """Changes _is_available attribute to True"""
         self._is_available = True
+
+
+class User:
+    """Module defining atributes and behaviour of User objects."""
+
+    def __init__(self, name: str):
+        self._name = name
+        self._borrowed_books = []
+
+    @property
+    def name(self) -> str:
+        """Name of user."""
+        return self._name
