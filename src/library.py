@@ -22,13 +22,17 @@ class Library():
         self._users = []
 
     def add_new_book(self, book: Book) -> None:
-        """ """
+        """Adds new book in library"""
+
         if book in self._books:
             raise BookAlreadyExistInLibraryException("The Book already exists in the library")
 
         self._books.append(book)
 
     def add_new_user(self, user: User) -> None:
-        """ """
+        """Adds new user in library"""
+
         if user in self._users:
             raise UserAlreadyExistInLibraryException("The User already exists in the library")
+
+        self._users.append(user)
