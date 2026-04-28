@@ -17,7 +17,8 @@ class UserAlreadyExistInLibraryException(Exception):
 class Library():
     """Represents a Library that manages Users and Books"""
 
-    def __init__(self):
+    def __init__(self, name: str):
+        self._name = name
         self._books = []
         self._users = []
 
@@ -36,3 +37,26 @@ class Library():
             raise UserAlreadyExistInLibraryException("The User already exists in the library")
 
         self._users.append(user)
+
+    def list_available_books(self) -> list:
+        """
+        Shows the available for borrow books in the library
+        :return list of available books
+        """
+        return [book for book in self._books if book.is_available]
+
+    def search_by_author(self, author) -> list:
+        """
+        Shows books based on the provided author.
+        :return list of books by the provided author
+        """
+
+        return [book for book in self._books if book.author == author]
+
+    def search_by_category(self, category) -> list:
+        """
+        Shows books based on the provided category.
+        :return list of books by the provided category
+        """
+
+        return [book for book in self._books if book.category == category]
