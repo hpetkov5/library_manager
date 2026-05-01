@@ -5,7 +5,7 @@ This module uses Python's unittest framework to validate the correctness of Book
 '''
 
 import unittest
-from src.book import Book, BookNotAvailableException
+from library_manager.book import Book, BookNotAvailableException
 
 
 class TestBook(unittest.TestCase):
@@ -43,3 +43,7 @@ class TestBook(unittest.TestCase):
         test_book.borrow_book()
         test_book.return_book()
         self.assertTrue(test_book.is_avalable)
+
+
+if __name__ == '__main__':
+    unittest.main()

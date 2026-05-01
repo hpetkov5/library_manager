@@ -1,7 +1,7 @@
 """This module defines Library class and the corresponding attributes and methods"""
 
-from src.book import Book
-from src.users import User
+from library_manager.book import Book
+from library_manager.users import User
 
 
 class BookAlreadyExistInLibraryException(Exception):
@@ -43,7 +43,7 @@ class Library():
         Shows the available for borrow books in the library
         :return list of available books
         """
-        return [book for book in self._books if book.is_available]
+        return [book for book in self._books if book._is_available]
 
     def search_by_author(self, author) -> list:
         """

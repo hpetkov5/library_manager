@@ -1,6 +1,6 @@
 """This module defines User class and the corresponding attributes and methods"""
 
-from src.book import Book
+from library_manager.book import Book
 
 class UserReachedBorrowLimitException(Exception):
     """Raise error when a user tries to borrow a book but have reached the borrow limit"""

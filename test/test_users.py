@@ -5,8 +5,9 @@ This module uses Python's unittest framework to validate the correctness of User
 '''
 
 import unittest
-from src.book import Book
-from src.users import User, UserReachedBorrowLimitException, UserAlreadyBorrowedBookException
+from library_manager.book import Book
+from library_manager.users import User, UserReachedBorrowLimitException
+from library_manager.users import UserAlreadyBorrowedBookException
 
 
 class TestUsers(unittest.TestCase):
@@ -69,3 +70,7 @@ class TestUsers(unittest.TestCase):
         test_user.user_return_book(test_book)
 
         self.assertTrue(test_book.is_avalable)
+
+
+if __name__ == '__main__':
+    unittest.main()

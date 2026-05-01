@@ -5,11 +5,11 @@ This module uses Python's unittest framework to validate the correctness of Libr
 '''
 
 import unittest
-from src.book import Book
-from src.users import User
-from src.library import Library
-from src.library import BookAlreadyExistInLibraryException, UserAlreadyExistInLibraryException
-
+from library_manager.book import Book
+from library_manager.users import User
+from library_manager.library import Library
+from library_manager.library import UserAlreadyExistInLibraryException
+from library_manager.library import BookAlreadyExistInLibraryException
 
 class TestLibrary(unittest.TestCase):
     """Test class defining the test cases to confirm validation of Library class"""
@@ -67,8 +67,8 @@ class TestLibrary(unittest.TestCase):
 
         test_library.add_new_book(test_book)
 
-        expected_result = test_book
-        actual_result = test_library.list_available_books
+        expected_result = [test_book]
+        actual_result = test_library.list_available_books()
         self.assertEqual(expected_result, actual_result)
 
     def test_search_by_author(self):
